@@ -1,0 +1,1236 @@
+/* =========================================================
+   NutriTrack - Pure Vanilla CSS (NO CSS VARIABLES / NO FRAMEWORKS)
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Base Container */
+.content-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ================= HEADER ================= */
+.app-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #10b981;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.25);
+}
+
+.brand-text h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.brand-text span {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Date Navigator */
+.date-navigator {
+  display: flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  border-radius: 9999px;
+  padding: 4px 8px;
+  border: 1px solid #e2e8f0;
+  gap: 4px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.icon-btn:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.date-display-wrapper {
+  position: relative;
+}
+
+.date-picker-hidden {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.date-label-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.date-label-btn:hover {
+  background-color: #e2e8f0;
+}
+
+.pill-btn {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+}
+
+.pill-btn:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+/* Action buttons in header */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #334155;
+  transition: all 0.15s;
+}
+
+.action-btn:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.action-btn.secondary {
+  background-color: #ffffff;
+}
+
+.action-btn.danger {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+.action-btn.danger:hover {
+  background-color: #fecaca;
+}
+
+/* ================= MAIN BODY ================= */
+.app-body {
+  padding: 24px 0 60px 0;
+}
+
+/* Summary Card */
+.summary-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+/* Circular Ring Metric */
+.ring-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #f1f5f9;
+  padding-right: 24px;
+}
+
+.ring-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.ring-bg {
+  fill: none;
+  stroke: #f1f5f9;
+}
+
+.ring-bar {
+  fill: none;
+  stroke: #10b981;
+  stroke-linecap: round;
+  stroke-dasharray: 477.52; /* 2 * PI * 76 */
+  stroke-dashoffset: 477.52;
+  transition: stroke-dashoffset 0.6s ease, stroke 0.3s ease;
+}
+
+.ring-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ring-calories-value {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.ring-calories-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+.ring-equation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.eq-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eq-title {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.eq-val {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.eq-op {
+  color: #94a3b8;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Macros & Stats */
+.stats-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.card-title-row h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.card-title-row .subtext {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.macro-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.macro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+}
+
+.macro-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.macro-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.protein-dot { background-color: #3b82f6; }
+.carbs-dot { background-color: #f59e0b; }
+.fat-dot { background-color: #ef4444; }
+
+.macro-numbers {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.macro-numbers strong {
+  color: #0f172a;
+}
+
+.progress-track {
+  height: 9px;
+  background-color: #f1f5f9;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.5s ease;
+}
+
+.protein-fill { background-color: #3b82f6; }
+.carbs-fill { background-color: #f59e0b; }
+.fat-fill { background-color: #ef4444; }
+
+/* Water Tracker inline */
+.water-section {
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.water-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.water-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0284c7;
+}
+
+.water-status {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.water-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.water-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0284c7;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.water-btn:hover {
+  background-color: #e0f2fe;
+  border-color: #7dd3fc;
+}
+
+.water-cups {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.water-cup {
+  width: 20px;
+  height: 26px;
+  border: 2px solid #38bdf8;
+  border-radius: 2px 2px 6px 6px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  position: relative;
+  overflow: hidden;
+}
+
+.water-cup.filled {
+  background-color: #0284c7;
+  border-color: #0284c7;
+}
+
+.water-cup:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= QUICK PRESETS BAR ================= */
+.quick-presets-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+
+.presets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.presets-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.presets-hint {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.preset-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.preset-chip {
+  flex-shrink: 0;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  color: #334155;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.preset-chip:hover {
+  background-color: #ecfdf5;
+  border-color: #10b981;
+  color: #065f46;
+  transform: translateY(-1px);
+}
+
+.preset-chip .preset-cal {
+  font-weight: 700;
+  color: #10b981;
+  font-size: 0.78rem;
+}
+
+/* ================= TRACKER LAYOUT (MEALS + SIDEBAR) ================= */
+.tracker-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Meals Column */
+.meals-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.meal-block {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.meal-header {
+  padding: 14px 18px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.meal-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.breakfast-icon { background-color: #fef3c7; }
+.lunch-icon { background-color: #ecfdf5; }
+.dinner-icon { background-color: #eff6ff; }
+.snacks-icon { background-color: #fdf2f8; }
+.exercise-icon { background-color: #fff1f2; }
+
+.meal-title-group h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.meal-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.add-item-btn {
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.add-item-btn:hover {
+  background-color: #10b981;
+  border-color: #10b981;
+  color: #ffffff;
+}
+
+.food-list {
+  padding: 8px 18px;
+}
+
+.food-list:empty::before {
+  content: "No items logged yet. Click 'Add Food' or use quick presets above.";
+  display: block;
+  font-size: 0.82rem;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 16px 0;
+  text-align: center;
+}
+
+/* Individual Food Item */
+.food-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f8fafc;
+  transition: background-color 0.15s;
+}
+
+.food-item-row:last-child {
+  border-bottom: none;
+}
+
+.food-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.food-item-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.food-item-meta {
+  font-size: 0.76rem;
+  color: #64748b;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.food-macro-tag {
+  background-color: #f1f5f9;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.food-item-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.food-item-kcal {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.food-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.item-action-icon-btn {
+  background: none;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.item-action-icon-btn:hover {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.item-action-icon-btn.edit-btn:hover {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+/* ================= SIDEBAR COLUMN ================= */
+.sidebar-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 18px;
+}
+
+.side-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.side-header h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.exercise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exercise-list:empty::before {
+  content: "No exercise logged today. Track walks, runs, or workouts to increase daily calorie budget!";
+  display: block;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.exercise-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background-color: #fff1f2;
+  border: 1px solid #ffe4e6;
+  border-radius: 8px;
+}
+
+.exercise-item-name {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #9f1239;
+}
+
+.exercise-item-meta {
+  font-size: 0.74rem;
+  color: #e11d48;
+}
+
+.exercise-item-burned {
+  font-weight: 700;
+  color: #be123c;
+  font-size: 0.9rem;
+}
+
+/* Daily Note Area */
+.note-container textarea {
+  width: 100%;
+  height: 90px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.84rem;
+  font-family: inherit;
+  color: #1e293b;
+  resize: vertical;
+  background-color: #f8fafc;
+}
+
+.note-container textarea:focus {
+  outline: none;
+  border-color: #10b981;
+  background-color: #ffffff;
+}
+
+/* Calorie Split Breakdown */
+.calorie-split-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.split-bar-wrap {
+  height: 12px;
+  background-color: #f1f5f9;
+  border-radius: 9999px;
+  overflow: hidden;
+  display: flex;
+}
+
+.split-segment {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.split-protein { background-color: #3b82f6; }
+.split-carbs { background-color: #f59e0b; }
+.split-fat { background-color: #ef4444; }
+
+.split-legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.protein-bg { background-color: #3b82f6; }
+.carbs-bg { background-color: #f59e0b; }
+.fat-bg { background-color: #ef4444; }
+
+.legend-label {
+  color: #64748b;
+}
+
+.legend-val {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ================= MODALS ================= */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  animation: modalPop 0.2s ease-out;
+}
+
+@keyframes modalPop {
+  from {
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-header {
+  padding: 18px 22px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #94a3b8;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+
+.modal-close:hover {
+  color: #0f172a;
+}
+
+form {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-body-content {
+  padding: 20px 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select {
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.92rem;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  background-color: #ffffff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-row.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.macros-fieldset {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fieldset-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.modal-footer {
+  padding: 14px 22px;
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.btn.primary {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  background-color: #059669;
+}
+
+.btn.secondary {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+
+.btn.secondary:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* Preset Calculator inside Goals modal */
+.preset-calculator-box {
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.calc-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.calc-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chip-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip-btn {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+
+.chip-btn:hover {
+  background-color: #ecfdf5;
+  border-color: #10b981;
+  color: #065f46;
+}
+
+/* Data Management list inside modal */
+.data-explainer {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.data-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.data-action-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background-color: #f8fafc;
+  gap: 12px;
+}
+
+.data-action-item strong {
+  display: block;
+  font-size: 0.88rem;
+  color: #0f172a;
+}
+
+.data-action-item p {
+  font-size: 0.76rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.data-action-item.danger-zone {
+  background-color: #fff1f2;
+  border-color: #fecdd3;
+}
+
+.file-input-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* ================= TOAST NOTIFICATION ================= */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 200;
+  pointer-events: none;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .tracker-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ring-card {
+    border-right: none;
+    border-bottom: 1px solid #f1f5f9;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .date-navigator {
+    justify-content: center;
+  }
+
+  .header-actions {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row.three-col {
+    grid-template-columns: 1fr;
+  }
+
+  .ring-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .progress-ring {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ring-bg, .ring-bar {
+    r: 62;
+    stroke-dasharray: 389.55;
+    stroke-dashoffset: 389.55;
+  }
+
+  .ring-calories-value {
+    font-size: 1.6rem;
+  }
+}
+
